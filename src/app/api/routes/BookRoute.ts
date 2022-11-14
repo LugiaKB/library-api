@@ -1,15 +1,14 @@
 import { Router } from "express";
 import { container } from "tsyringe";
-import BooksController from "../controllers/Book/BookController";
-import BooksGetAllControler from "../controllers/Book/BookGetAllController";
+import { BookController } from "../controllers";
 import { BookCreateValidation } from "../validations";
 
 const booksRouter = Router();
 
-const bookCreateController = container.resolve(BooksController);
+const bookController = container.resolve(BookController);
 
-booksRouter.get("/", new BooksGetAllControler().getAll);
+booksRouter.get("/", (req, res) => bookController.getAll(req, res));
 
-booksRouter.post("/", BookCreateValidation, (req, res) => bookCreateController.create(req, res));
+booksRouter.post("/", BookCreateValidation, (req, res) => bookController.create(req, res));
 
 export default booksRouter;
