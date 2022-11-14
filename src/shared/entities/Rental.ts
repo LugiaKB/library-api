@@ -1,7 +1,9 @@
 import Base from "./Base";
 
 class Rental extends Base {
-    public client!: string;
+    public librarian!: string;
+
+    public clientEmail!: string;
 
     public rentalDate!: Date;
 

@@ -14,16 +14,11 @@ const clientSchema = new Schema<Client>({
         type: Number,
         required: true,
     },
-    username: {
+    email: {
         type: String,
         required: true,
         index: true,
         unique: true,
-    },
-
-    password: {
-        type: String,
-        required: true,
     },
 });
 

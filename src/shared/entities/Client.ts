@@ -5,9 +5,7 @@ class Client extends Base {
 
     public age!: number;
 
-    public username!: string;
-
-    public password!: string;
+    public email!: string;
 }
 
 export default Client;
