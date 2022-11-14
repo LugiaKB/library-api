@@ -1,12 +1,12 @@
 import { Router } from "express";
 import { container } from "tsyringe";
-import BooksCreateController from "../controllers/Book/BookCreateController";
+import BooksController from "../controllers/Book/BookController";
 import BooksGetAllControler from "../controllers/Book/BookGetAllController";
 import { BookCreateValidation } from "../validations";
 
 const booksRouter = Router();
 
-const bookCreateController = container.resolve(BooksCreateController);
+const bookCreateController = container.resolve(BooksController);
 
 booksRouter.get("/", new BooksGetAllControler().getAll);
 
