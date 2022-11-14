@@ -1,9 +1,9 @@
-import BooksCreateRepository from "@/app/database/Repositories/Books/BooksCreateRepository";
+import { BookRepository } from "@/app/database/Repositories/Book";
 import { Book } from "@/shared/entities";
 
 class BooksCreateService {
     public async create(data: Book): Promise<Book> {
-        const repository = new BooksCreateRepository();
+        const repository = new BookRepository();
 
         const book = new Book({ ...data, rented: false });
 

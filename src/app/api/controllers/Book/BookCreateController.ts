@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import BooksCreateService from "@/app/business/services/Books/BooksCreateService";
+import BooksCreateService from "@/app/business/services/Book/BookCreateService";
 
 class BooksCreateController {
     public async create(req: Request, res: Response): Promise<void> {

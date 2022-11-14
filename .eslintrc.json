@@ -21,6 +21,7 @@
         ],
         "no-console": "off",
         "no-underscore-dangle": "off",
+        "new-cap": "off",
         "@typescript-eslint/no-useless-constructor": "off",
         "react/jsx-filename-extension": "off",
         "import/extensions": "off",

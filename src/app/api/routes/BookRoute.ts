@@ -1,6 +1,6 @@
 import { Router } from "express";
-import BooksCreateController from "../controllers/Books/BooksCreateController";
-import BooksGetAllControler from "../controllers/Books/BooksGetAllController";
+import BooksCreateController from "../controllers/Book/BookCreateController";
+import BooksGetAllControler from "../controllers/Book/BookGetAllController";
 import { BookCreateValidation } from "../validations";
 
 const booksRouter = Router();

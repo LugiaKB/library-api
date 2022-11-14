@@ -1,5 +1,6 @@
 import express, { Request } from "express";
 import cors from "cors";
+import "reflect-metadata";
 import "express-async-errors";
 import "dotenv";
 import router from "./app/api/routes";
