@@ -1,11 +1,17 @@
 import { Request, Response } from "express";
-import BooksCreateService from "@/app/business/services/Book/BookCreateService";
+import { inject, injectable } from "tsyringe";
+import { IBaseService } from "@/app/business/services/Base/interfaces";
+import { Book } from "@/shared/entities";
 
+@injectable()
 class BooksCreateController {
-    public async create(req: Request, res: Response): Promise<void> {
-        const service = new BooksCreateService();
+    constructor(
+        @inject("BookService")
+        private readonly bookService: IBaseService<Book>
+    ) {}
 
-        res.send(await service.create(req.body));
+    public async create(req: Request, res: Response): Promise<void> {
+        res.send(await this.bookService.create(req.body));
     }
 }
 

@@ -1,13 +1,19 @@
-import { BookRepository } from "@/app/database/Repositories/Book";
+import { inject, injectable } from "tsyringe";
+import { IBaseRepository } from "@/app/database/Repositories/Base/interfaces";
 import { Book } from "@/shared/entities";
+import { IBaseCreateService } from "../Base/interfaces";
 
-class BooksCreateService {
+@injectable()
+class BooksCreateService implements IBaseCreateService<Book> {
+    constructor(
+        @inject("BookRepository")
+        private readonly bookRepository: IBaseRepository<Book>
+    ) {}
+
     public async create(data: Book): Promise<Book> {
-        const repository = new BookRepository();
-
         const book = new Book({ ...data, rented: false });
 
-        return repository.create(book);
+        return this.bookRepository.create(book);
     }
 }
 

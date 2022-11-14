@@ -3,6 +3,7 @@ import cors from "cors";
 import "reflect-metadata";
 import "express-async-errors";
 import "dotenv";
+import "@/shared/containers/";
 import router from "./app/api/routes";
 import { InvalidRouteError } from "./shared/errors";
 import { ErrorMiddleware } from "./app/api/middlewares";
