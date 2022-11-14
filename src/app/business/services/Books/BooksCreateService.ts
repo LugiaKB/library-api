@@ -1,13 +1,13 @@
 import BooksCreateRepository from "@/app/database/Repositories/Books/BooksCreateRepository";
-import Client from "@/shared/entities/Client";
+import { Book } from "@/shared/entities";
 
 class BooksCreateService {
-    public async create(data: Client): Promise<Client> {
+    public async create(data: Book): Promise<Book> {
         const repository = new BooksCreateRepository();
 
-        const client = new Client(data);
+        const book = new Book(data);
 
-        return repository.create(client);
+        return repository.create(book);
     }
 }
 

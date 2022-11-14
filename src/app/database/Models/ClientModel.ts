@@ -4,7 +4,7 @@ import Client from "@/shared/entities/Client";
 const clientSchema = new Schema<Client>({
     _id: {
         type: String,
-        required: false,
+        required: true,
     },
     name: {
         type: String,
@@ -12,6 +12,17 @@ const clientSchema = new Schema<Client>({
     },
     age: {
         type: Number,
+        required: true,
+    },
+    username: {
+        type: String,
+        required: true,
+        index: true,
+        unique: true,
+    },
+
+    password: {
+        type: String,
         required: true,
     },
 });

@@ -1,12 +1,12 @@
-import Client from "@/shared/entities/Client";
-import { ClientModel } from "../../Models";
+import { Book } from "@/shared/entities";
+import { BookModel } from "../../Models";
 
 class BooksCreateRepository {
-    public async create(data: Client): Promise<Client> {
-        const client = new ClientModel(data);
-        await client.save();
+    public async create(data: Book): Promise<Book> {
+        const book = new BookModel(data);
+        await book.save();
 
-        return client;
+        return book;
     }
 }
 
