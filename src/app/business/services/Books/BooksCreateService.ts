@@ -5,7 +5,7 @@ class BooksCreateService {
     public async create(data: Book): Promise<Book> {
         const repository = new BooksCreateRepository();
 
-        const book = new Book(data);
+        const book = new Book({ ...data, rented: false });
 
         return repository.create(book);
     }
