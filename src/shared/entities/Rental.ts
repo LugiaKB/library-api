@@ -1,6 +1,6 @@
 import Base from "./Base";
 
-class Rental extends Base {
+class Rental extends Base<Rental> {
     public librarian!: string;
 
     public clientEmail!: string;

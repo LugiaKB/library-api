@@ -1,1 +1,1 @@
-export { default as BookController } from "./Book/BookController";
+export { default as BookCreateController } from "./Book/BookCreateController";

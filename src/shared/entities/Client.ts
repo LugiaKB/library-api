@@ -1,6 +1,6 @@
 import Base from "./Base";
 
-class Client extends Base {
+class Client extends Base<Client> {
     public name!: string;
 
     public age!: number;

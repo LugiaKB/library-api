@@ -1,6 +1,6 @@
 import Base from "./Base";
 
-class Book extends Base {
+class Book extends Base<Book> {
     public title!: string;
 
     public genres?: string[];
